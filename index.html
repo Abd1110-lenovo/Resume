@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,43 +8,45 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f9f9f9;
             color: #333;
             line-height: 1.6;
         }
-        
+
         .container {
             max-width: 900px;
             margin: 20px auto;
             background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-        
+
         /* Print Styles */
         @media print {
-            body { 
-                font-size: 12px; 
+            body {
+                font-size: 12px;
                 background: white;
             }
+
             .container {
                 margin: 0;
                 box-shadow: none;
                 max-width: none;
             }
-            .no-print { 
-                display: none !important; 
+
+            .no-print {
+                display: none !important;
             }
         }
-        
+
         /* Header */
         .header {
             background: #000;
@@ -51,52 +54,52 @@
             padding: 40px;
             text-align: left;
         }
-        
+
         .header h1 {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 10px;
         }
-        
+
         .header h2 {
             font-size: 1.2rem;
             font-weight: 300;
             margin-bottom: 30px;
             opacity: 0.9;
         }
-        
+
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
             font-size: 0.9rem;
         }
-        
+
         .contact-item {
             display: flex;
             align-items: center;
             gap: 8px;
         }
-        
+
         .contact-item a {
             color: white;
             text-decoration: none;
         }
-        
+
         .contact-item a:hover {
             text-decoration: underline;
         }
-        
+
         /* Sections */
         .section {
             padding: 40px;
             border-bottom: 1px solid #e5e5e5;
         }
-        
+
         .section:last-child {
             border-bottom: none;
         }
-        
+
         .section-title {
             font-size: 1.8rem;
             font-weight: 700;
@@ -105,19 +108,19 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        
+
         .section-content {
             color: #555;
             line-height: 1.7;
         }
-        
+
         /* Skills Section */
         .skills-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
         }
-        
+
         .skill-category h4 {
             font-weight: 600;
             color: #000;
@@ -126,23 +129,23 @@
             align-items: center;
             gap: 10px;
         }
-        
+
         .skill-bars {
             margin-bottom: 20px;
         }
-        
+
         .skill-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 12px;
         }
-        
+
         .skill-name {
             font-size: 0.9rem;
             font-weight: 500;
         }
-        
+
         .skill-bar-container {
             width: 120px;
             height: 8px;
@@ -150,20 +153,20 @@
             border-radius: 4px;
             overflow: hidden;
         }
-        
+
         .skill-bar {
             height: 100%;
             background: #000;
             border-radius: 4px;
             transition: width 0.8s ease;
         }
-        
+
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }
-        
+
         .skill-tag {
             background: #f0f0f0;
             color: #333;
@@ -172,12 +175,12 @@
             font-size: 0.8rem;
             font-weight: 500;
         }
-        
+
         /* Experience Section */
         .job {
             margin-bottom: 40px;
         }
-        
+
         .job-header {
             display: flex;
             justify-content: space-between;
@@ -185,56 +188,56 @@
             margin-bottom: 15px;
             flex-wrap: wrap;
         }
-        
+
         .job-title {
             font-size: 1.3rem;
             font-weight: 700;
             color: #000;
             margin-bottom: 5px;
         }
-        
+
         .company-name {
             font-size: 1.1rem;
             font-weight: 600;
             color: #000;
             margin-bottom: 3px;
         }
-        
+
         .job-description {
             color: #666;
             font-style: italic;
             font-size: 0.9rem;
         }
-        
+
         .job-duration {
             color: #666;
             font-weight: 500;
             font-size: 0.9rem;
             white-space: nowrap;
         }
-        
+
         .project-section {
             margin-bottom: 20px;
         }
-        
+
         .project-title {
             font-weight: 600;
             color: #000;
             margin-bottom: 10px;
         }
-        
+
         .job-responsibilities {
             list-style: none;
             padding-left: 0;
         }
-        
+
         .job-responsibilities li {
             display: flex;
             align-items: flex-start;
             margin-bottom: 8px;
             color: #555;
         }
-        
+
         .job-responsibilities li::before {
             content: "•";
             color: #000;
@@ -242,82 +245,82 @@
             margin-right: 12px;
             margin-top: 2px;
         }
-        
+
         /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
         }
-        
+
         .project-card {
             border-left: 4px solid #000;
             padding-left: 20px;
         }
-        
+
         .project-card h4 {
             font-weight: 700;
             color: #000;
             margin-bottom: 8px;
         }
-        
+
         .project-tech {
             font-size: 0.85rem;
             color: #666;
             margin-bottom: 10px;
             font-weight: 500;
         }
-        
+
         .project-description {
             color: #555;
             font-size: 0.9rem;
             line-height: 1.6;
         }
-        
+
         /* Education Section */
         .education-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
         }
-        
+
         .education-item {
             margin-bottom: 25px;
         }
-        
+
         .degree {
             font-weight: 600;
             color: #000;
             font-size: 1.1rem;
         }
-        
+
         .field {
             color: #555;
             margin-bottom: 3px;
         }
-        
+
         .year {
             color: #666;
             font-size: 0.9rem;
         }
-        
+
         .cert-list {
             list-style: none;
         }
-        
+
         .cert-list li {
             display: flex;
             align-items: center;
             margin-bottom: 10px;
             color: #555;
         }
-        
+
         .cert-list li i {
             color: #000;
             margin-right: 10px;
             width: 16px;
         }
-        
+
         /* Footer */
         .footer {
             background: #f5f5f5;
@@ -325,20 +328,20 @@
             text-align: center;
             color: #666;
         }
-        
+
         .footer strong {
             color: #000;
         }
-        
+
         .footer a {
             color: #000;
             text-decoration: none;
         }
-        
+
         .footer a:hover {
             text-decoration: underline;
         }
-        
+
         /* Print Controls */
         .print-controls {
             position: fixed;
@@ -348,7 +351,7 @@
             display: flex;
             gap: 10px;
         }
-        
+
         .btn {
             padding: 12px 20px;
             border: none;
@@ -361,62 +364,62 @@
             gap: 8px;
             transition: background-color 0.3s;
         }
-        
+
         .btn-primary {
             background: #000;
             color: white;
         }
-        
+
         .btn-primary:hover {
             background: #333;
         }
-        
+
         .btn-success {
             background: #28a745;
             color: white;
         }
-        
+
         .btn-success:hover {
             background: #218838;
         }
-        
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .container {
                 margin: 10px;
             }
-            
+
             .header {
                 padding: 30px 20px;
             }
-            
+
             .header h1 {
                 font-size: 2rem;
             }
-            
+
             .section {
                 padding: 30px 20px;
             }
-            
+
             .skills-grid,
             .education-grid {
                 grid-template-columns: 1fr;
                 gap: 25px;
             }
-            
+
             .job-header {
                 flex-direction: column;
                 align-items: flex-start;
             }
-            
+
             .job-duration {
                 margin-top: 5px;
             }
-            
+
             .projects-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .print-controls {
                 position: relative;
                 top: auto;
@@ -425,14 +428,14 @@
                 justify-content: center;
             }
         }
-        
+
         /* Animation */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
             animation: fadeIn 0.6s ease forwards;
         }
-        
+
         @keyframes fadeIn {
             to {
                 opacity: 1;
@@ -441,6 +444,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Print Controls -->
     <div class="print-controls no-print">
@@ -456,12 +460,12 @@
 
     <!-- Resume Container -->
     <div class="container">
-        
+
         <!-- Header Section -->
         <header class="header">
             <h1>ABHAY DWIVEDI</h1>
-            <h2>Senior Frontend Developer | React.js Expert | TypeScript Specialist</h2>
-            
+            <h2>Senior Frontend Developer | React.js Expert | JavaScript Specialist</h2>
+
             <!-- Contact Information -->
             <div class="contact-grid">
                 <div class="contact-item">
@@ -492,10 +496,13 @@
             <h3 class="section-title">Professional Summary</h3>
             <div class="section-content">
                 <p>
-                    Innovative Frontend/UI Engineer with 3+ years of experience specializing in React.js, TypeScript, and modern web development. 
-                    Proven track record of building scalable, high-performance applications for major clients including NASA and Wunderkind. 
-                    Expert in creating pixel-perfect responsive designs, optimizing UI performance, and ensuring cross-browser compatibility. 
-                    Strong background in AWS integration, state management with Redux, and agile development methodologies.
+                    Innovative Frontend/UI Engineer with 5+ years of experience specializing in React.js, Vue.js , and
+                    modern web development.
+                    Proven track record of building scalable, high-performance applications for major clients including
+                    NASA and Wunderkind.
+                    Expert in creating pixel-perfect responsive designs, optimizing UI performance, and ensuring
+                    cross-browser compatibility.
+                    Strong background in state management with Redux & Vuex and agile development methodologies.
                 </p>
             </div>
         </section>
@@ -503,7 +510,7 @@
         <!-- Technical Skills -->
         <section class="section">
             <h3 class="section-title">Technical Skills</h3>
-            
+
             <div class="skills-grid">
                 <!-- Frontend Technologies -->
                 <div class="skill-category">
@@ -519,7 +526,7 @@
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">TypeScript</span>
+                            <span class="skill-name">Vue.js</span>
                             <div class="skill-bar-container">
                                 <div class="skill-bar" style="width: 90%"></div>
                             </div>
@@ -538,7 +545,7 @@
                         </div>
                     </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Vue.js</span>
+                        <span class="skill-tag">TypeScript</span>
                         <span class="skill-tag">HTML5</span>
                         <span class="skill-tag">CSS3</span>
                         <span class="skill-tag">SASS</span>
@@ -554,9 +561,9 @@
                     </h4>
                     <div class="skill-bars">
                         <div class="skill-item">
-                            <span class="skill-name">AWS (S3, Lambda)</span>
+                            <span class="skill-name">AWS (S3, Lambda)(Basic)</span>
                             <div class="skill-bar-container">
-                                <div class="skill-bar" style="width: 80%"></div>
+                                <div class="skill-bar" style="width: 50%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -580,7 +587,7 @@
                     </div>
                     <div class="skill-tags">
                         <span class="skill-tag">Figma</span>
-                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Angular.js</span>
                         <span class="skill-tag">WordPress</span>
                         <span class="skill-tag">Agile/Scrum</span>
                     </div>
@@ -591,7 +598,7 @@
         <!-- Professional Experience -->
         <section class="section">
             <h3 class="section-title">Professional Experience</h3>
-            
+
             <!-- Versatile Tech -->
             <div class="job">
                 <div class="job-header">
@@ -603,12 +610,18 @@
                     <div class="job-duration">March 2024 – August 2025</div>
                 </div>
                 <ul class="job-responsibilities">
-                    <li>Designed and developed custom Shopify Plus themes, improving brand alignment and user experience by 40%</li>
-                    <li>Built dynamic React.js applications using functional and class components, serving 100K+ daily active users</li>
-                    <li>Implemented reusable component architecture, reducing development time by 35% and improving code maintainability</li>
-                    <li>Developed Shopify Remix extensions for Checkout and Customer Account, increasing conversion rates by 25%</li>
-                    <li>Automated build, test, and deployment pipelines using modern DevOps practices, improving release efficiency by 30%</li>
-                    <li>Collaborated with UX/UI teams to deliver pixel-perfect, responsive designs across multiple device types</li>
+                    <li>Designed and developed custom Shopify Plus themes, improving brand alignment and user experience
+                        by 40%</li>
+                    <li>Built dynamic React.js applications using functional and class components, serving 100K+ daily
+                        active users</li>
+                    <li>Implemented reusable component architecture, reducing development time by 35% and improving code
+                        maintainability</li>
+                    <li>Developed Shopify Remix extensions for Checkout and Customer Account, increasing conversion
+                        rates by 25%</li>
+                    <li>Automated build, test, and deployment pipelines using modern DevOps practices, improving release
+                        efficiency by 30%</li>
+                    <li>Collaborated with UX/UI teams to deliver pixel-perfect, responsive designs across multiple
+                        device types</li>
                 </ul>
             </div>
 
@@ -622,14 +635,17 @@
                     </div>
                     <div class="job-duration">February 2023 – February 2024</div>
                 </div>
-                
+
                 <!-- NASA Project -->
                 <div class="project-section">
                     <div class="project-title">Project: NYPA (NASA Client)</div>
                     <ul class="job-responsibilities">
-                        <li>Developed high-performance Vue.js eCommerce applications with 99.9% uptime and SEO optimization</li>
-                        <li>Created and maintained Looker dashboards for real-time campaign monitoring and analytics reporting</li>
-                        <li>Built custom Shopify integrations for B2B and B2C clients in financial and aviation sectors</li>
+                        <li>Developed high-performance Vue.js eCommerce applications with 99.9% uptime and SEO
+                            optimization</li>
+                        <li>Created and maintained Looker dashboards for real-time campaign monitoring and analytics
+                            reporting</li>
+                        <li>Built custom Shopify integrations for B2B and B2C clients in financial and aviation sectors
+                        </li>
                         <li>Implemented Redux middleware (Thunk, Saga) for efficient asynchronous API handling</li>
                     </ul>
                 </div>
@@ -638,8 +654,10 @@
                 <div class="project-section">
                     <div class="project-title">Project: Cealus (Hungarian Government)</div>
                     <ul class="job-responsibilities">
-                        <li>Successfully migrated frontend from Angular 17 + NGRX to Vue 3, improving performance by 45%</li>
-                        <li>Enhanced code maintainability and reduced bundle size by 30% through modern Vue 3 architecture</li>
+                        <li>Successfully migrated frontend from Angular 17 + NGRX to Vue 3, improving performance by 45%
+                        </li>
+                        <li>Enhanced code maintainability and reduced bundle size by 30% through modern Vue 3
+                            architecture</li>
                     </ul>
                 </div>
             </div>
@@ -655,10 +673,14 @@
                     <div class="job-duration">September 2022 – January 2023</div>
                 </div>
                 <ul class="job-responsibilities">
-                    <li>Developed responsive React.js web applications for digital marketing campaigns, increasing client engagement by 50%</li>
-                    <li>Built interactive landing pages with optimized conversion funnels, achieving 35% higher conversion rates</li>
-                    <li>Implemented modern CSS frameworks and animations to enhance user experience and brand presentation</li>
-                    <li>Collaborated with marketing teams to integrate analytics tracking and A/B testing capabilities</li>
+                    <li>Developed responsive React.js web applications for digital marketing campaigns, increasing
+                        client engagement by 50%</li>
+                    <li>Built interactive landing pages with optimized conversion funnels, achieving 35% higher
+                        conversion rates</li>
+                    <li>Implemented modern CSS frameworks and animations to enhance user experience and brand
+                        presentation</li>
+                    <li>Collaborated with marketing teams to integrate analytics tracking and A/B testing capabilities
+                    </li>
                     <li>Optimized website performance and SEO, resulting in 40% improvement in page load speeds</li>
                 </ul>
             </div>
@@ -674,11 +696,15 @@
                     <div class="job-duration">February 2022 – August 2022</div>
                 </div>
                 <ul class="job-responsibilities">
-                    <li>Created visually appealing and interactive websites using HTML5, CSS3, and JavaScript for creative campaigns</li>
+                    <li>Created visually appealing and interactive websites using HTML5, CSS3, and JavaScript for
+                        creative campaigns</li>
                     <li>Developed custom WordPress themes and plugins for client portfolio websites and blogs</li>
-                    <li>Implemented responsive design principles ensuring cross-device compatibility and optimal user experience</li>
-                    <li>Worked closely with design teams to translate creative mockups into functional web interfaces</li>
-                    <li>Maintained and updated existing client websites, ensuring security and performance standards</li>
+                    <li>Implemented responsive design principles ensuring cross-device compatibility and optimal user
+                        experience</li>
+                    <li>Worked closely with design teams to translate creative mockups into functional web interfaces
+                    </li>
+                    <li>Maintained and updated existing client websites, ensuring security and performance standards
+                    </li>
                 </ul>
             </div>
 
@@ -705,30 +731,34 @@
         <!-- Key Projects -->
         <section class="section">
             <h3 class="section-title">Key Projects & Achievements</h3>
-            
+
             <div class="projects-grid">
                 <div class="project-card">
                     <h4>Email Marketing Platform</h4>
                     <div class="project-tech">React.js • Redux • Looker • Adobe Analytics</div>
-                    <div class="project-description">Developed comprehensive email marketing platform with template customization, real-time preview, and advanced analytics reporting capabilities.</div>
+                    <div class="project-description">Developed comprehensive email marketing platform with template
+                        customization, real-time preview, and advanced analytics reporting capabilities.</div>
                 </div>
-                
+
                 <div class="project-card">
                     <h4>Drone Surveillance System</h4>
                     <div class="project-tech">Vue.js • Real-time APIs • ATC Integration</div>
-                    <div class="project-description">Built public safety drone surveillance system with real-time restricted area alerts and air traffic control integration.</div>
+                    <div class="project-description">Built public safety drone surveillance system with real-time
+                        restricted area alerts and air traffic control integration.</div>
                 </div>
-                
+
                 <div class="project-card">
                     <h4>SpiceJet Entertainment System</h4>
                     <div class="project-tech">Angular 11 • TypeScript • Streaming APIs</div>
-                    <div class="project-description">Developed onboard entertainment system with Wi-Fi streaming capabilities and integrated flight services for enhanced passenger experience.</div>
+                    <div class="project-description">Developed onboard entertainment system with Wi-Fi streaming
+                        capabilities and integrated flight services for enhanced passenger experience.</div>
                 </div>
-                
+
                 <div class="project-card">
                     <h4>Scalable Management Dashboard</h4>
                     <div class="project-tech">React.js • Redux • AWS Lambda • S3</div>
-                    <div class="project-description">Built enterprise dashboard for product, order, and inventory management with AWS Lambda APIs and CloudFront integration.</div>
+                    <div class="project-description">Built enterprise dashboard for product, order, and inventory
+                        management with AWS Lambda APIs and CloudFront integration.</div>
                 </div>
             </div>
         </section>
@@ -736,7 +766,7 @@
         <!-- Education & Certifications -->
         <section class="section">
             <h3 class="section-title">Education & Certifications</h3>
-            
+
             <div class="education-grid">
                 <div>
                     <h4 style="display: flex; align-items: center; margin-bottom: 20px;">
@@ -748,16 +778,16 @@
                         <div class="field">Electronics & Communication Engineering</div>
                         <div class="year">2014 - 2018</div>
                     </div>
-                    
+
                     <h4 style="margin-bottom: 15px;">Technical Expertise</h4>
                     <ul class="cert-list">
                         <li>
                             <i class="fas fa-certificate"></i>
-                            <span>React.js Advanced Patterns & Performance</span>
+                            <span>React.js Patterns & Performance</span>
                         </li>
                         <li>
                             <i class="fas fa-certificate"></i>
-                            <span>TypeScript Professional Development</span>
+                            <span>JavaScript Professional Development</span>
                         </li>
                         <li>
                             <i class="fas fa-certificate"></i>
@@ -769,7 +799,7 @@
                         </li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h4 style="margin-bottom: 15px;">Professional Skills</h4>
                     <ul class="cert-list">
@@ -797,12 +827,12 @@
         <!-- Footer -->
         <footer class="footer">
             <p>
-                <strong>Abhay Dwivedi</strong> • Senior Frontend Developer • 
-                <a href="mailto:abhayfarrukhabad1110@gmail.com">abhayfarrukhabad1110@gmail.com</a> • 
+                <strong>Abhay Dwivedi</strong> • Senior Frontend Developer •
+                <a href="mailto:abhayfarrukhabad1110@gmail.com">abhayfarrukhabad1110@gmail.com</a> •
                 <span>+91 8882154287</span>
             </p>
             <p style="margin-top: 10px; font-size: 0.9rem;">
-                Portfolio: <a href="https://port-res.vercel.app/">port-res.vercel.app</a> • 
+                Portfolio: <a href="https://port-res.vercel.app/">port-res.vercel.app</a> •
                 GitHub: <a href="https://github.com/Abd1110-lenovo">Abd1110-lenovo</a>
             </p>
         </footer>
@@ -810,7 +840,7 @@
 
     <script>
         // Animate skill bars on load
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             setTimeout(() => {
                 const skillBars = document.querySelectorAll('.skill-bar');
                 skillBars.forEach(bar => {
@@ -848,5 +878,7 @@
             observer.observe(el);
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9717a14dc609425a',t:'MTc1NTU4NTMxOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9717a14dc609425a',t:'MTc1NTU4NTMxOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
 </html>
